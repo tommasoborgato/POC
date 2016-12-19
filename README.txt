@@ -23,3 +23,16 @@ ng new ANGULAR2_POC
 cd ANGULAR2_POC
 ng serve
 http://localhost:4200/
+ng build --output-path "../src/main/webapp/angular2" -prod --base-href angular2/
+
+
+-----------------------
+Git
+-----------------------
+git init
+git add .
+git commit -m "POC First commit"
+git remote add POC https://github.com/tommasoborgato/POC
+git remote -v
+git pull --allow-unrelated-histories https://github.com/tommasoborgato/POC
+git push POC master
