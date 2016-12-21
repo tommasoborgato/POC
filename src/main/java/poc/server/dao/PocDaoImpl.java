@@ -2,7 +2,7 @@ package poc.server.dao;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import poc.shared.OutputObj;
+import poc.shared.model.OutputObj;
 
 /**
  * Created by icttb0 on 18/12/2016.

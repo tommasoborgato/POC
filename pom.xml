@@ -11,8 +11,15 @@
 
     <properties>
         <resteasy.version>3.1.0.Final</resteasy.version>
-        <spring.version>3.0.6.RELEASE</spring.version>
+        <spring.version>5.0.0.M3</spring.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>artifacts.alfresco.com</id>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/public/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
 

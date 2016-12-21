@@ -1,6 +1,6 @@
 package poc.server.dao;
 
-import poc.shared.OutputObj;
+import poc.shared.model.OutputObj;
 
 /**
  * Created by icttb0 on 18/12/2016.

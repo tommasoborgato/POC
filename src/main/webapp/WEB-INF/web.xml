@@ -8,10 +8,10 @@
         <param-name>javax.ws.rs.Application</param-name>
         <param-value>poc.server.rest.RestApplication</param-value>
     </context-param>-->
-    <!-- Custom name for main spring configuration -->
+    <!-- Custom name for main spring configuration : If the parameter does not exist, the ContextLoaderListener uses /WEB-INF/applicationContext.xml as a default -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:poc-spring-context.xml</param-value>
+        <param-value>/WEB-INF/poc-spring-context.xml</param-value>
     </context-param>
 
     <!-- RESTEasy configuration -->
