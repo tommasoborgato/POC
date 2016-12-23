@@ -3,44 +3,18 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
 
-    <!-- Without Spring we delegate Resteasy to load resosurces -->
-    <!--<context-param>
-        <param-name>javax.ws.rs.Application</param-name>
-        <param-value>poc.server.rest.RestApplication</param-value>
-    </context-param>-->
-    <!-- Custom name for main spring configuration : If the parameter does not exist, the ContextLoaderListener uses /WEB-INF/applicationContext.xml as a default -->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/poc-spring-context.xml</param-value>
-    </context-param>
-
-    <!-- RESTEasy configuration -->
-    <listener>
-        <listener-class>
-            org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
-        </listener-class>
-    </listener>
-
-    <!-- RESTEasy <-> Spring connector (RESTEasy can access Spring beans) -->
-    <!-- SpringContextLoaderListener must be declared after ResteasyBootstrap as it uses ServletContext attributes initialized by it -->
-    <listener>
-        <listener-class>
-            org.jboss.resteasy.plugins.spring.SpringContextLoaderListener
-        </listener-class>
-    </listener>
-
-    <context-param>
-        <param-name>resteasy.servlet.mapping.prefix</param-name>
-        <param-value>/rest</param-value>
-    </context-param>
     <servlet>
-        <servlet-name>Resteasy</servlet-name>
-        <servlet-class>
-            org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
-        </servlet-class>
+        <servlet-name>SpringApplication</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                /WEB-INF/spring/*.xml
+            </param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Resteasy</servlet-name>
+        <servlet-name>SpringApplication</servlet-name>
         <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
 
